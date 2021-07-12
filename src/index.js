@@ -1,5 +1,5 @@
 import App from "./App";
-import rootReducers from './store/reducer/index.js.js';
+import rootReducers from './store/reducer/index.js'
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux'; 
 import { Provider } from 'react-redux'
