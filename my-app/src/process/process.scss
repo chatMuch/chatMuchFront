@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Frijole&family=Gabriela&display=swap');
+
+.process {
+    align-items: center;
+    min-height: 500px;
+    padding: 2rem;
+    width: 450px;
+    flex-direction: column;
+    display: flex;
+    margin-right: 5rem;
+    justify-content: space-evenly;
+  
+    h5 {
+      span {
+        color: yellow;
+      }
+      font-weight: 400;
+      margin-bottom: 5rem;
+      color: rgb(4, 238, 4);
+    }
+    h4 {
+      font-weight: 400;
+      color: rgb(4, 238, 4);
+    }
+    p {  
+      font-size: 1rem;
+      padding: 1.2rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.4);
+      text-overflow: auto;
+    }
+  }
+  .sampleHeading{
+    font-family: 'Gabriela', serif;
+  }
+  .clock{
+    font-family: 'Frijole', cursive;
+  }
