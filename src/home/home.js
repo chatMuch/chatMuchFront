@@ -21,23 +21,22 @@ function Homepage({ socket }) {
 
 return (
     <div>
-    
-    <div className="homepage">
-    <h1 id="colorH1" style={{background: "black", color:"white"}}>chatMuch</h1>
-    <input
-        placeholder="Input your user name" value={username} onChange={(e) => setusername(e.target.value)}
-    ></input>
-    <input
-        placeholder="Input the room name" value={roomname} onChange={(e) => setroomname(e.target.value)}
-    ></input>
-    {/* Add third placeholder for password (option to remove) */}
-    <input
-        placeholder="Input Password"     
-    ></input>
-    <Link to={`/chat/${roomname}/${username}`}>
-        <button onClick={sendData}>Join</button>
-    </Link>
-    </div>
+        <div className="homepage">
+            <h1 id="colorH1" style={{background: "black", color:"white"}}>chatMuch</h1>
+            <input
+                placeholder="Input your user name" value={username} onChange={(e) => setusername(e.target.value)}
+            ></input>
+            <input
+                placeholder="Input the room name" value={roomname} onChange={(e) => setroomname(e.target.value)}
+            ></input>
+            {/* Add third placeholder for password (option to remove) */}
+            <input
+                placeholder="Input Password"     
+            ></input>
+            <Link to={`/chat/${roomname}/${username}`}>
+                <button onClick={sendData}>Join</button>
+            </Link>
+        </div>
     </div>
   );
 }
