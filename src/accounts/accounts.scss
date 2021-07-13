@@ -1,0 +1,27 @@
+.userTitle{
+color: black;
+}
+.userNotes{
+display: flex;
+ padding-left: 10%  
+ 
+}
+.userNotesCard{
+    padding-left:0;
+    margin:0;
+    width: 500px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: black;
+    margin:0;
+
+    width: 200%;
+}
+.userAlertCard{
+    margin: 20px;
+    display: flex;
+}
