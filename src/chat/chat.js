@@ -1,4 +1,3 @@
-'use strict';
 
 // 3rd party resources
 import React, { useState, useEffect, useRef } from 'react';

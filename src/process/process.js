@@ -1,4 +1,4 @@
-'use strict';
+
 
 // 3rd party resources
 import "./process.scss";
