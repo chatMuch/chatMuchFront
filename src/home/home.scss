@@ -2,7 +2,7 @@
 
 .homepage {
     width: 500px;
-    height: 500px;
+    height: 100vh;
     padding: 2rem;
     background: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/c612a127919515.5636cc305faee.gif);
     background-position: center;
@@ -11,6 +11,9 @@
     justify-content: space-evenly;
     flex-direction: column;
     border-radius: 5px;
+
+  
+    
     input {
       color: black;
       height: 50px;
