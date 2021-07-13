@@ -1,4 +1,3 @@
-'use strict'
 
 // 3rd party resources
 import { ProcessReducer } from './process';

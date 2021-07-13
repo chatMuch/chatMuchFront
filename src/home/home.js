@@ -1,4 +1,3 @@
-'use strict';
 
 // 3rd party resources
 import React, { useState } from 'react';
@@ -29,16 +28,11 @@ function Homepage({ socket }) {
         <div>
             <div className='homepage'>
                 <h1 id='colorH1' style={{background: 'black', color:'white'}}>chatMuch</h1>
-                <input>
-                    placeholder='Input your user name' value={username} onChange={(e) => setusername(e.target.value)}
-                </input>
-                <input>
-                    placeholder='Input the room name' value={roomname} onChange={(e) => setroomname(e.target.value)}
-                </input>
+                <input placeholder='Input your user name' value={username} onChange={(e) => setusername(e.target.value)}/>
+                <input placeholder='Input the room name' value={roomname} onChange={(e) => setroomname(e.target.value)} />
                 {/* Add third placeholder for password (option to remove) */}
-                <input>
-                    placeholder='Input Password'     
-                </input>
+                <input placeholder='Input Password' />  
+                
                 <Link to={`/chat/${roomname}/${username}`}>
                     <button onClick={sendData}>Join</button>
                 </Link>
