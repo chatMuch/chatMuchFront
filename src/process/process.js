@@ -1,7 +1,8 @@
 
 
 // 3rd party resources
-import "./process.scss";
+import React from 'react';
+import './process.scss';
 import Clock from 'react-live-clock';
 
 
@@ -12,10 +13,10 @@ function Process() {
   return (
     <div className="process">
       <div>
-      <Clock className="clock" style={{opacity:"90%", color: "red", borderRadius: "40%", background: "black", fontSize: "70px"}} format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+        <Clock className="clock" style={{opacity:'90%', color: 'red', borderRadius: '40%', background: 'black', fontSize: '70px'}} format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
       </div>
       <div>
-        <h1 className="sampleHeading" style={{position: "center", opacity: "80%", background: "black", color: "green"}} >This is where the CRM APPlication will be at....................
+        <h1 className="sampleHeading" style={{position: 'center', opacity: '80%', background: 'black', color: 'green'}} >This is where the CRM APPlication will be at....................
         .............................
         ...1111111111111....
         ...........11..11...
