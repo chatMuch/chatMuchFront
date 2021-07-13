@@ -1,3 +1,6 @@
+'use strict';
+
+// 3rd party resources
 import "./process.scss";
 import Clock from 'react-live-clock';
 
@@ -33,4 +36,5 @@ function Process() {
     </div>
   );
 }
+
 export default Process;

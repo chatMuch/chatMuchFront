@@ -1,10 +1,14 @@
-import App from "./App";
-import rootReducers from './store/reducer/index.js'
-import ReactDOM from 'react-dom';
+'use strict';
+
+// 3rd party resources
 import { createStore } from 'redux'; 
 import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom';
 import React from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Esoteric resources
+import App from './App';
+import rootReducers from './store/reducer/index.js'
 
 const store = createStore(rootReducers)
 ReactDOM.render(
