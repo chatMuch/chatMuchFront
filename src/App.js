@@ -10,7 +10,7 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
-import Image from 'react-bootstrap/Image'
+import Accounts from './accounts/accounts'
 // import Navbar from 'react-bootstrap/Navbar'
 const socket = io.connect('http://localhost:3000/chat')
 
@@ -20,9 +20,9 @@ function Appmain(props) {
     <div>
 <div>
         <Navbar style={{marginBottom: "5%"}} className="Nav" bg="dark" variant="dark">
-    <Navbar.Brand href="#home"><img src='./images/logo.jpg' alt='logo'/></Navbar.Brand>
+    <Navbar.Brand href="/"><img src='./images/logo.jpg' alt='logo'/></Navbar.Brand>
     <Nav className="mr-auto">
-      <Nav.Link href="#home">Accounts</Nav.Link>
+      <Nav.Link href="/accounts">Accounts</Nav.Link>
     </Nav>
     <Form style={{display:"inline-flex", width: "30%"}} inline>
       <FormControl  type="text" placeholder="Search Accounts" className="mr-sm-2" />
@@ -59,10 +59,16 @@ function App() {
           </Route>
           <Route path="/chat/:roomname/:username" component={Appmain} />
         </Switch>
+        <Switch>
+          <Route path="/accounts" exact>
+            <Accounts/>
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
 }
+
 
 export default App;
 
