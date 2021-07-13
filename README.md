@@ -5,7 +5,7 @@
 
 ## 🚀  Getting Started
 
-1. Install dependencies `npm i` or `yarn add i`
+1. Install dependencies `npm i`
 1. Start up `npm start` or `yarn start`
 
 ## 📖 Table of Contents
