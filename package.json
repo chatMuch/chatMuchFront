@@ -6,10 +6,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "aes256": "^1.1.0",
     "bootstrap": "^5.0.2",
     "cors": "^2.8.5",
-    "messages": "^0.1.0",
     "node": "^16.4.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
@@ -50,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.24.0"
   }
 }

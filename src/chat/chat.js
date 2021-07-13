@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 // 3rd party resources
 import React, { useState, useEffect, useRef } from 'react';
