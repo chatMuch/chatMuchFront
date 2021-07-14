@@ -22,7 +22,7 @@ import FormControl from 'react-bootstrap/FormControl';
 
 
 // Connect to socket server
-const socket = io.connect('http://localhost:3000/chat');
+const socket = io.connect('http://localhost:3001/chat');
 
 
 function Appmain(props) {
