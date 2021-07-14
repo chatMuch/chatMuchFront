@@ -29,7 +29,7 @@ const socket = io.connect('http://localhost:3001/chat');
         <div>
           <div>
             <Navbar style={{marginBottom: "5%"}} className="Nav" bg="dark" variant="dark">
-              <Navbar.Brand href="/"><img src='./images/logo.jpg' alt='logo'/></Navbar.Brand>
+              <Navbar.Brand href="/">chatMuch Lite</Navbar.Brand>
                 <Nav className="mr-auto">
                   <Nav.Link href="/accounts">Accounts</Nav.Link>
                 </Nav>
@@ -78,9 +78,9 @@ function App(props) {
             <div>
               <React.Fragment>
                 <Navbar style={{marginBottom: "5%"}} className="Nav" bg="dark" variant="dark">
-                  <Navbar.Brand href="/"><img src='./images/logo.jpg' alt='logo'/></Navbar.Brand>
+                  <Navbar.Brand href="/">chatMuch Lite</Navbar.Brand>
                     <Nav className="mr-auto">
-                      <Nav.Link href="/chat/:roomname/:username" component={Appmain}>Chat</Nav.Link>
+                      <Nav.Link socket={socket} href="/chat/:roomname/:username" component={Appmain}>Chat</Nav.Link>
                     </Nav>
                       <Form style={{display:"inline-flex", width: "30%"}} inline>
                         <FormControl  type="text" placeholder="Search Accounts" className="mr-sm-2" />
