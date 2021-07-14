@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
+
+.Accounts{
+    height: 1000px;
+    max-height: 1100px;
+}
+.Accounts h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Work Sans', sans-serif;
+}
 .userTitle{
-color: black;
+margin-left: 10%;
+
+
+}
+.userTitle h1{
+    margin-right: 15%;
+    
 }
 .userNotes{
 display: flex;
- padding-left: 10%  
  
 }
 .userNotesCard{
@@ -12,12 +28,13 @@ display: flex;
     width: 500px;
 }
 .container{
+    margin-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-style: solid;
     border-color: black;
-    margin:0;
+    
 
     width: 200%;
 }

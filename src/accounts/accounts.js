@@ -17,7 +17,7 @@ function Accounts() {
     const handleCloseNote = () => setShow(false);
     const handleshowNote = ()=> setShow(true);
 return (
-    <div>
+    <div className="Accounts">
         <h1>ACCOUNTS</h1>
             <div className="userTitle">
                 <h1>My Name</h1>
