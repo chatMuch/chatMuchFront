@@ -30,7 +30,7 @@ function Appmain(props) {
     <div>
       <div>
         <Navbar style={{marginBottom: '5%'}} className="Nav" bg="dark" variant="dark">
-          <Navbar.Brand href="/"><img src='./images/logo.jpg' alt='logo'/></Navbar.Brand>
+          <Navbar.Brand href="/">chatMuch Lite</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/accounts">Accounts</Nav.Link>
           </Nav>
@@ -49,6 +49,18 @@ function Appmain(props) {
         </div> 
         <div className="right">
           <div>
+            <Navbar style={{marginBottom: '5%'}} className="Nav" bg="dark" variant="dark">
+              <Navbar.Brand href="/">chatMuch Lite</Navbar.Brand>
+              <Nav className="mr-auto">
+                <Nav.Link href="/accounts">Accounts</Nav.Link>
+              </Nav>
+              <Form style={{display:'inline-flex', width: '30%'}} inline>
+                <FormControl  type="text" placeholder="Search Accounts" className="mr-sm-2" />
+                <div style={{margin:'2%'}} >
+                  <Button  variant="outline-info">Search</Button>
+                </div>
+              </Form>
+            </Navbar>
             <Chat 
               username={props.match.params.username}
               roomname={props.match.params.roomname}
@@ -79,9 +91,9 @@ function App(props) {
             <div>
               <React.Fragment>
                 <Navbar style={{marginBottom: '5%'}} className="Nav" bg="dark" variant="dark">
-                  <Navbar.Brand href="/"><img src='./images/logo.jpg' alt='logo'/></Navbar.Brand>
+                  <Navbar.Brand href="/">chatMuch Lite</Navbar.Brand>
                   <Nav className="mr-auto">
-                    <Nav.Link href="/chat/:roomname/:username" component={Appmain}>Chat</Nav.Link>
+                    <Nav.Link socket={socket} href="/chat/:roomname/:username" component={Appmain}>Chat</Nav.Link>
                   </Nav>
                   <Form style={{display:'inline-flex', width: '30%'}} inline>
                     <FormControl  type="text" placeholder="Search Accounts" className="mr-sm-2" />

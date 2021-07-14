@@ -15,14 +15,13 @@ function Accounts() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleCloseNote = () => setShow(false);
-  const handleShowNote = () => setShow(true);
-
+  const handleShowNote = ()=> setShow(true);
   return (
-    <div>
+    <div className="Accounts">
       <h1>ACCOUNTS</h1>
       <div className="userTitle">
         <h1>My Name</h1>
-        <h3>Organization: </h3>
+        <h3>Organization: </h3> 
         <h3>Role(s): </h3>
         <h3>email: </h3>
         <h3>Phone: </h3>
@@ -31,9 +30,9 @@ function Accounts() {
         <div className="userNotes">
           <Card className="userNotesCard" style={{ width: '20rem' }}>
             <Card.Body>
-              <Card.Title style={{ color: 'black' }}>Notes</Card.Title>
-              <Card.Text style={{ color: 'black' }}>
-                                Notes!
+              <Card.Title style={{color: 'black'}}>Notes</Card.Title>
+              <Card.Text style={{color: 'black'}}>
+                                    Notes!
               </Card.Text>
             </Card.Body>
           </Card>
@@ -44,15 +43,15 @@ function Accounts() {
             </Modal.Header>
             <Modal.Body>Add a new note
               <Form>
-                <Form.Control type="text" placeholder="Create note" />
+                <Form.Control type="text" placeholder="Create note"/>
               </Form>
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
-                                Close
+                                            Close
               </Button>
               <Button variant="primary" onClick={handleClose}>
-                                Save Changes
+                                            Save Changes
               </Button>
             </Modal.Footer>
           </Modal>
@@ -60,13 +59,13 @@ function Accounts() {
         <div className="userAlertCard">
           <Card style={{ width: '20rem' }}>
             <Card.Body>
-              <Card.Title style={{ color: 'black' }}>Alerts</Card.Title>
-              <Card.Text style={{ color: 'black' }}>
-                                Alerts
+              <Card.Title style={{color: 'black'}}>Alerts</Card.Title>
+              <Card.Text style={{color: 'black'}}>
+                                    Alerts 
               </Card.Text>
             </Card.Body>
           </Card>
-          <Button variant="primary" onClick={handleShow}>Create Alert</Button>
+          <Button variant="primary" onClick={handleShow}>Create Alert</Button> 
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Modal heading</Modal.Title>
@@ -78,10 +77,10 @@ function Accounts() {
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
-                                Close
+                                            Close
               </Button>
               <Button variant="primary" onClick={handleClose}>
-                                Save Changes
+                                            Save Changes
               </Button>
             </Modal.Footer>
           </Modal>
