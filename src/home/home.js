@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 // 3rd party resources
 import React, { useState } from 'react';
@@ -10,10 +11,11 @@ import { select } from 'async';
 
 
 function Homepage({ socket }) {
-    const [username, setusername] = useState('');
-    const [roomname, setroomname] = useState('');
+  const [username, setusername] = useState('');
+  const [roomname, setroomname] = useState('');
 
   //activates joinRoom function defined on the backend 
+
     const sendData = () => {
         if (username !== '' && roomname !== '') {
             console.log(username, roomname);
@@ -44,12 +46,12 @@ function Homepage({ socket }) {
                     </DropdownButton>
                 {/* Add third placeholder for password (option to remove) */}
                 
-                <Link to={`/chat/${roomname}/${username}`}>
-                    <button onClick={sendData}>Join</button>
-                </Link>
-            </div>
-        </div>
-    );
+        <Link to={`/chat/${roomname}/${username}`}>
+          <button onClick={sendData}>Join</button>
+        </Link>
+      </div>
+    </div>
+  );
 }
 
 export default Homepage;

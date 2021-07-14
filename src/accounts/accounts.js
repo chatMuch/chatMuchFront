@@ -1,10 +1,14 @@
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
-import './accounts.scss'
-import React, {useState} from 'react'
-import Form from 'react-bootstrap/Form'
+'use strict';
 
+// 3rd party resources
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import React, {useState} from 'react';
+import Form from 'react-bootstrap/Form';
+
+// Styling resources
+import './accounts.scss';
 
 function Accounts() {
     const [show, setShow] = useState(false);
@@ -82,9 +86,6 @@ return (
                         </Modal>
                 </div>
             </div>
-
-    </div>
-    );
-}
+);
 
 export default Accounts;
