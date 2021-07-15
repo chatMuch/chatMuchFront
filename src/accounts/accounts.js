@@ -1,21 +1,38 @@
+/* eslint-disable react/prop-types */
+
 'use strict';
 
 // 3rd party resources
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
+const axios = require('axios');
 
 // Styling resources
 import './accounts.scss';
 
-function Accounts() {
+function Accounts({ user }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleCloseNote = () => setShow(false);
   const handleShowNote = ()=> setShow(true);
+
+  useEffect(() => {
+    console.log(user);
+    // axios.get(`http://localhost:3000/customers/${id}`, { headers:{
+    //   'Authorization': `Bearer ${user.token}`,
+    // }})
+    //   .then( function(response){
+    //     console.log('response', response);
+    //   })
+    //   .catch(function(err){
+    //     console.error(err);
+    //   });
+  });
+
   return (
     <div className="Accounts">
       <h1>ACCOUNTS</h1>
