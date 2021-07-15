@@ -11,7 +11,7 @@ import Accounts from './accounts/accounts';
 
 // 3rd party resources
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react';
 import io from 'socket.io-client';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -19,13 +19,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 
-
-
 // Connect to socket server
 const socket = io.connect('http://localhost:3001/chat');
 
-
 function Appmain(props) {
+  console.log(props);
   return (
     <div>
       <div>
@@ -49,18 +47,6 @@ function Appmain(props) {
         </div> 
         <div className="right">
           <div>
-            <Navbar style={{marginBottom: '5%'}} className="Nav" bg="dark" variant="dark">
-              <Navbar.Brand href="/">chatMuch Lite</Navbar.Brand>
-              <Nav className="mr-auto">
-                <Nav.Link href="/accounts">Accounts</Nav.Link>
-              </Nav>
-              <Form style={{display:'inline-flex', width: '30%'}} inline>
-                <FormControl  type="text" placeholder="Search Accounts" className="mr-sm-2" />
-                <div style={{margin:'2%'}} >
-                  <Button  variant="outline-info">Search</Button>
-                </div>
-              </Form>
-            </Navbar>
             <Chat 
               username={props.match.params.username}
               roomname={props.match.params.roomname}
@@ -72,7 +58,15 @@ function Appmain(props) {
     </div>
   );
 }
-function App(props) {
+
+function App() {
+  const [user, setUser] = useState({});
+
+  const setState = (value) => {
+    setUser(value);
+  };
+
+  console.log('user in state', user);
   return (
     <Router>
       <div className="App">
@@ -80,7 +74,7 @@ function App(props) {
         {/* path to home  */}
         <Switch>
           <Route path="/" exact>
-            <Home socket={socket} />
+            <Home socket={socket} user={user} setUser={setUser}/>
           </Route>
           <Route path='/chat/:roomname/:username' component={Appmain} />
         </Switch>
@@ -104,13 +98,12 @@ function App(props) {
                 </Navbar>
               </React.Fragment>
             </div>
-            <Accounts/>
+            <Accounts user={user} setUser={setState}/>
           </Route>
         </Switch>
       </div>
     </Router>
   );
 }
-
 
 export default App;
