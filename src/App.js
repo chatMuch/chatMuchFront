@@ -81,7 +81,7 @@ function App() {
             </div>
           </Route>
           <Route path={`/accounts/${user.id}`} user={user} exact>
-            <Accounts user={user}/>
+            <Accounts user={user} setUser={setUser}/>
           </Route>
         </Switch>
       </div>

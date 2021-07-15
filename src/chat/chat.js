@@ -15,7 +15,7 @@ function Chat({ username, roomName, socket }) {
     socket.on('chat', (data) => {
 
       messages.push({
-        userId: data.userId,
+        userId: data.id,
         username: data.username,
         text: data.text,
       });

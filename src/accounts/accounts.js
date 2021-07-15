@@ -4,38 +4,27 @@
 
 
 // 3rd party resources
-import React, { useEffect } from 'react';
-const axios = require('axios');
+import React from 'react';
+// const axios = require('axios');
 
 // Styling resources
 import './accounts.scss';
 import AccountCards from './accountCards/accountsCards.js'; 
 
-function Accounts({ user }) {
+function Accounts({ user, setUser}) {
+  
+  // const usersRef = useRef([]);
+  let i =0;
 
-
-  useEffect(() => {
-    console.log(user);
-    axios.get(`http://localhost:3000/api/v2/customers/${user.id}`, { headers:{
-      'Authorization': `Bearer ${user.token}`,
-    }})
-      .then( function(response){
-        console.log('response', response);
-      })
-      .catch(function(err){
-        console.error(err);
-      });
-  });
-
-
-
+  console.log('from accounts', user);
+    
   return (
     <div className="Accounts">
-      <h1>User: {user.username}</h1>
+      <h1>User: {user.username} {console.log('from accounts jsx', user)}</h1>
       <h2>Role: {user.role}</h2>
       <h2>Permissions: {user.capabilities + ''}</h2>
       <div>
-        <AccountCards />
+        {user.customers.map(item => {return <AccountCards key={i++} user={user} setUser={setUser} customer={item}/>;} )}
       </div>
     </div>
   );
