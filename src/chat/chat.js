@@ -7,7 +7,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './chat.scss';
 
 //gets the data from the action object and reducers defined earlier
-function Chat({ username, roomname, socket }) {
+function Chat({ username, roomName, socket }) {
   const [text, setText] = useState('');
   const [messages, setMessages] = useState([]);
 
@@ -48,7 +48,7 @@ function Chat({ username, roomname, socket }) {
     <div className='chat'>
       <div className='user-name'>
         <h2>
-          {username} <span style={{ fontSize: '0.7rem' }}>in room { roomname }</span>
+          {username} <span style={{ fontSize: '0.7rem' }}>in room { roomName }</span>
         </h2>
       </div>
       <div className='chat-message'>

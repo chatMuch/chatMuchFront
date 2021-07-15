@@ -22,15 +22,15 @@ function Accounts({ user }) {
 
   useEffect(() => {
     console.log(user);
-    // axios.get(`http://localhost:3000/customers/${id}`, { headers:{
-    //   'Authorization': `Bearer ${user.token}`,
-    // }})
-    //   .then( function(response){
-    //     console.log('response', response);
-    //   })
-    //   .catch(function(err){
-    //     console.error(err);
-    //   });
+    axios.get(`http://localhost:3000/api/v2/customers/${user.id}`, { headers:{
+      'Authorization': `Bearer ${user.token}`,
+    }})
+      .then( function(response){
+        console.log('response', response);
+      })
+      .catch(function(err){
+        console.error(err);
+      });
   });
 
   return (
@@ -49,7 +49,7 @@ function Accounts({ user }) {
             <Card.Body>
               <Card.Title style={{color: 'black'}}>Notes</Card.Title>
               <Card.Text style={{color: 'black'}}>
-                                    Notes!
+                Notes!
               </Card.Text>
             </Card.Body>
           </Card>
@@ -94,10 +94,10 @@ function Accounts({ user }) {
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
-                                            Close
+                Close
               </Button>
               <Button variant="primary" onClick={handleClose}>
-                                            Save Changes
+                Save Changes
               </Button>
             </Modal.Footer>
           </Modal>

@@ -3,13 +3,12 @@
 
 // Esoteric resources
 import Chat from './chat/chat.js';
-import Process from './process/process';
 import Home from './home/home';
 import Accounts from './accounts/accounts';
 
 // 3rd party resources
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import io from 'socket.io-client';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -23,15 +22,25 @@ import './App.scss';
 // Connect to socket server
 const socket = io.connect('http://localhost:3001/chat');
 
-function App(props) {
-  return (
+function App() {
+  const [user, setUser] = useState({});
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [roomName, setRoomName] = useState('');
+  console.log('user in state', user);
 
+  return (
     <Router>
       <div>
-        <Navbar style={{marginBottom: '5%'}} className="Nav" bg="dark" variant="dark">
-          <Navbar.Brand href="/">chatMuch Lite</Navbar.Brand>
+        <Navbar className="Nav" bg="dark" variant="dark">
+          <Navbar.Brand href="/" onClick={(e) => e.preventDefault()}>chatMuch Lite</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/accounts">Accounts</Nav.Link>
+            <Link to={`/accounts/${user.id}`}>
+              Accounts
+            </Link>
+            <Link to={`/chat/${roomName}/${username}`}>
+              Chat
+            </Link>
           </Nav>
           <Form style={{display:'inline-flex', width: '30%'}} inline>
             <FormControl type="text" placeholder="Search Accounts" className="mr-sm-2" />
@@ -45,26 +54,30 @@ function App(props) {
         {/* path to home */}
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <Home 
+              setUser={setUser} 
+              socket={socket} 
+              username={username}
+              setUsername={setUsername}
+              roomName={roomName}
+              setRoomName={setRoomName}
+              password={password}
+              setPassword={setPassword}
+            />
           </Route>
-          <Route path='/chat/:roomname/:username'>
-            <React.Fragment>
-              <div className="left">
-                <Process style={{background:'black', opacity: '70%'}}/>
+          <Route path={`/chat/${roomName}/${username}`}>
+            <div className="right">
+              <div>
+                <Chat
+                  username={username}
+                  roomName={roomName}
+                  socket={socket}
+                />
               </div>
-              <div className="right">
-                <div>
-                  <Chat
-                    username={props.username}
-                    roomname={props.roomname}
-                    socket={socket}
-                  />
-                </div>
-              </div>
-            </React.Fragment>
+            </div>
           </Route>
-          <Route path="/accounts" exact>
-            <Accounts />
+          <Route path={`/accounts/${user.id}`} user={user} exact>
+            <Accounts user={user}/>
           </Route>
         </Switch>
       </div>
@@ -72,4 +85,6 @@ function App(props) {
   );
 }
 
+{/* <Nav.Link href={`/accounts/${user.id}`} onClick={(e) => e.preventDefault()} >Accounts</Nav.Link> */}
+{/* <Nav.Link href={`/chat/${roomName}/${username}`} onClick={(e) => e.preventDefault()}>chat</Nav.Link> */}
 export default App;
