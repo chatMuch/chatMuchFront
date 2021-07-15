@@ -32,8 +32,9 @@
   display: flex;
   width: 400px;
   padding: 1rem;
-  justify-content: space-between;
-  height: 600px;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
   flex-direction: column;
   background-color: rgb(32, 32, 32);
   .user-name {

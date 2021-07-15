@@ -33,14 +33,18 @@ function App() {
     <Router>
       <div>
         <Navbar className="Nav" bg="dark" variant="dark">
-          <Navbar.Brand href="/" onClick={(e) => e.preventDefault()}>chatMuch Lite</Navbar.Brand>
+          <Navbar.Brand href="/" onClick={(e) => {alert('All Sign-data will be lost');}} >chatMuch Lite</Navbar.Brand>
           <Nav className="mr-auto">
-            <Link to={`/accounts/${user.id}`}>
-              Accounts
-            </Link>
-            <Link to={`/chat/${roomName}/${username}`}>
-              Chat
-            </Link>
+            <div className="NavLinks">
+              <Link to={`/accounts/${user.id}`}>
+                Accounts
+              </Link >
+            </div>
+            <div className="NavLinks">
+              <Link to={`/chat/${roomName}/${username}`}>
+                Chat
+              </Link>
+            </div>
           </Nav>
           <Form style={{display:'inline-flex', width: '30%'}} inline>
             <FormControl type="text" placeholder="Search Accounts" className="mr-sm-2" />
