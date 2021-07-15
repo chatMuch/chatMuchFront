@@ -22,7 +22,7 @@ function Accounts({ user }) {
 
   useEffect(() => {
     console.log(user);
-    axios.get(`http://localhost:3000/customers/${user.id}`, { headers:{
+    axios.get(`http://localhost:3000/api/v2/customers/${user.id}`, { headers:{
       'Authorization': `Bearer ${user.token}`,
     }})
       .then( function(response){
