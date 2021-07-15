@@ -10,6 +10,7 @@ import React from 'react';
 // Styling resources
 import './accounts.scss';
 import AccountCards from './accountCards/accountsCards.js'; 
+import Button from 'react-bootstrap/Button';
 
 function Accounts({ user, setUser}) {
   
@@ -23,6 +24,7 @@ function Accounts({ user, setUser}) {
       <h1>User: {user.username} {console.log('from accounts jsx', user)}</h1>
       <h2>Role: {user.role}</h2>
       <h2>Permissions: {user.capabilities + ''}</h2>
+      <Button>Add Customer</Button>
       <div>
         {user.customers.map(item => {return <AccountCards key={i++} user={user} setUser={setUser} customer={item}/>;} )}
       </div>
