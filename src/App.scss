@@ -2,7 +2,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 .App {
-background: #264653;
+background: $backgroundColor;
 background-size: cover;
   .left{
     display:inline-flex;
