@@ -16,17 +16,16 @@ function Homepage({ socket, setUser, password, setPassword, username, setUsernam
   
   const sendData = () => {
 
-    // remove after testing
-    const signUpInfo = {
-      username,
-      password,
-      role: 'salesPerson',
-    };
-    
-    axios.post('http://localhost:3000/signup', signUpInfo)
+    console.log(username, password); 
+
+    axios.post('http://localhost:3000/signin', {}, {auth : {
+      username: username,
+      password: password,
+    },
+    })
       .then( function(response) {
         let temp = response.data.user;
-        axios.get('http://localhost:3000/users', { 
+        axios.get('http://localhost:3000/api/v2/customers', { 
           headers:{
             'Authorization' : `Bearer ${temp.token}`},
         })
