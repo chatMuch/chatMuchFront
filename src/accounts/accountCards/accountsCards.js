@@ -7,6 +7,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
+import './accountCards.scss';
 
 
 function AccountCards({user, setUser, customer}){
@@ -38,21 +39,33 @@ function AccountCards({user, setUser, customer}){
 
   return(
     <div>
-      <CardGroup>
-        <Card variant="dark">
-          <Card.Img variant="top" src="holder.js/100px160" />
-          <Card.Body>
-            <Card.Title style={{color: 'black'}}>Customer: {customer.name}</Card.Title>
-            <Card.Text style={{display: 'flex', justifyContent: 'center', color: 'black'}}>
-              Job: {customer.jobTitle}  Email: {customer.email}  Phone: {customer.phone} 
-            </Card.Text>
-          </Card.Body>
-          <Button value={customer.id} onClick={destroyCustomer}>Delete</Button>
-          <Card.Footer>
-            <small className="text-muted">{Date()}</small>
-          </Card.Footer>
-        </Card>
-      </CardGroup>
+      <div className="cards">
+        <CardGroup >
+          <Card style={{opacity:'0.7',background: '#C3B1E1'}} variant="dark">
+            <Card.Body>
+              <Card.Title style={{color: 'black'}}>Customer: {customer.name}</Card.Title>
+              <Card.Text style={{display: 'flex', justifyContent: 'center', color: 'black'}}>
+                <ul>
+                  <li>
+                    Job: {customer.jobTitle}
+                  </li>
+                  <li>
+                    Email: {customer.email}
+                  </li>
+                  <li>
+                    Phone: {customer.phone} 
+                  </li>
+                </ul> 
+              </Card.Text>
+            </Card.Body>
+            <Button style={{width: '40%'}} value={customer.id} onClick={destroyCustomer}>Delete</Button>
+            <Card.Footer>
+              <small className="text-muted">{Date()}</small>
+            </Card.Footer>
+          </Card>
+        </CardGroup>
+
+      </div>
     </div>
   );
 }

@@ -12,9 +12,7 @@ import React, { useState } from 'react';
 import io from 'socket.io-client';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import FormControl from 'react-bootstrap/FormControl';
+
 
 // Style resources
 import './App.scss';
@@ -31,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className="App">
         <Navbar className="Nav" bg="dark" variant="dark">
           <Navbar.Brand href="/" onClick={(e) => {alert('All Sign-data will be lost');}} >chatMuch Lite</Navbar.Brand>
           <Nav className="mr-auto">
@@ -46,12 +44,6 @@ function App() {
               </Link>
             </div>
           </Nav>
-          <Form style={{display:'inline-flex', width: '30%'}} inline>
-            <FormControl type="text" placeholder="Search Accounts" className="mr-sm-2" />
-            <div style={{margin:'2%'}} >
-              <Button variant="outline-info">Search</Button>
-            </div>
-          </Form>
         </Navbar>
       </div>
       <div className="App">
