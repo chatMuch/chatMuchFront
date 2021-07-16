@@ -1,23 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:ital,wght@1,500&display=swap');
 
-.Accounts{
-    height: 1000px;
-    max-height: 1100px;
-}
 .Accounts h1{
     display: flex;
-    justify-content: center;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Anton', sans-serif;
 }
-.userTitle{
-margin-left: 10%;
 
-
-}
-.userTitle h1{
+.user{
+    font-size: 35pt;
     margin-right: 15%;
-    
-}
+    font-family: 'Anton', sans-serif;
+
 .userNotes{
 display: flex;
  
@@ -41,4 +35,5 @@ display: flex;
 .userAlertCard{
     margin: 20px;
     display: flex;
+}
 }

@@ -1,9 +1,14 @@
 @import './globals';
 @import '~bootstrap/scss/bootstrap';
 
+body{
+  background: teal;
+}
 .App {
-background: $backgroundColor;
-background-size: cover;
+background: #322b34;
+width: 1000px;
+height: 250px;
+
   .left{
     display:inline-flex;
     justify-content: center;
