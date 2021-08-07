@@ -5,7 +5,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // Styling resources
 import './chat.scss';
-import Clock from 'react-live-clock';
+
+
 //gets the data from the action object and reducers defined earlier
 function Chat({ username, roomName, socket }) {
   const [text, setText] = useState('');
@@ -91,7 +92,7 @@ function Chat({ username, roomName, socket }) {
             <button onClick={sendData}>Send</button>
           </div>
         </div>
-  
+              
       </div>
     </div>
   );
