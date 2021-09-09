@@ -18,7 +18,7 @@ import Nav from 'react-bootstrap/Nav';
 import './App.scss';
 
 // Connect to socket server
-const socket = io.connect('http://localhost:3001/chat');
+const socket = io.connect('https://tjohnson986-chatmuch.herokuapp.com/chat');
 
 function App() {
   const [user, setUser] = useState({});

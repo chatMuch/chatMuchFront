@@ -18,14 +18,14 @@ function Homepage({ socket, setUser, password, setPassword, username, setUsernam
 
     console.log(username, password); 
 
-    axios.post('http://localhost:3000/signin', {}, {auth : {
+    axios.post('https://tjohnson986-chatmuch.herokuapp.com/signin', {}, {auth : {
       username: username,
       password: password,
     },
     })
       .then( function(response) {
         let temp = response.data.user;
-        axios.get('http://localhost:3000/api/v2/customers', { 
+        axios.get('https://tjohnson986-chatmuch.herokuapp.com/api/v2/customers', { 
           headers:{
             'Authorization' : `Bearer ${temp.token}`},
         })

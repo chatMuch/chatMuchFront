@@ -23,14 +23,14 @@ const createUserForm = ({user, setUser}) => {
     
     axios({
       method: 'post',
-      url: 'http://localhost:3000/api/v2/customers',
+      url: 'https://tjohnson986-chatmuch.herokuapp.com/api/v2/customers',
       headers: {'Authorization': `Bearer ${user.token}`},
       data: customer, 
     })
       .then( function(response) {
         alert('Created Customer');
       });
-    axios.get(`http://localhost:3000/api/v2/customers`, {
+    axios.get('https://tjohnson986-chatmuch.herokuapp.com/api/v2/customers', {
       headers: {
         'Authorization' : `Bearer ${user.token}`},
     })
